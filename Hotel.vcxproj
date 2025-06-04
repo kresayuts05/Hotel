@@ -147,6 +147,7 @@
     <ClInclude Include="Room.h" />
     <ClInclude Include="SingleRoom.h" />
     <ClInclude Include="TripleRoom.h" />
+    <ClInclude Include="Vector.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

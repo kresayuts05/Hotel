@@ -5,7 +5,7 @@ class Room
 {
 public:
 	Room(unsigned number, unsigned capacity);
-    ~Room();//TODO!!!!!!!!!!!
+	virtual ~Room() = default;
 
 	unsigned getNumber() const;
 	unsigned getCapacity() const;
