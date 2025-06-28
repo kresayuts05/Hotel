@@ -1,6 +1,8 @@
 #include <iostream>
 #include <exception>
 #include <fstream>
+
+//Взето от Пламена Илиева
 template <typename T>
 class Vector {
 	T* data;
