@@ -128,8 +128,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Apartment.cpp" />
+    <ClCompile Include="CheckInCommand.cpp" />
     <ClCompile Include="Command.cpp" />
     <ClCompile Include="CommandHandler.cpp" />
+    <ClCompile Include="Date.cpp" />
     <ClCompile Include="DoubleRoom.cpp" />
     <ClCompile Include="Guest.cpp" />
     <ClCompile Include="Hotel.cpp" />
@@ -141,8 +143,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Apartment.h" />
+    <ClInclude Include="CheckInCommand.h" />
     <ClInclude Include="Command.h" />
     <ClInclude Include="CommandHandler.h" />
+    <ClInclude Include="Date.h" />
     <ClInclude Include="DoubleRoom.h" />
     <ClInclude Include="Guest.h" />
     <ClInclude Include="Hotel.h" />

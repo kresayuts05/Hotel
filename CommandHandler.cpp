@@ -17,4 +17,3 @@ void CommandHandler::registerCommand(Command* cmd) {
         throw;
     }
 }
-
