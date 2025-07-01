@@ -24,6 +24,7 @@
     <ProjectGuid>{94555179-38ca-487b-9e46-951da17f45ab}</ProjectGuid>
     <RootNamespace>Hotel</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Hotel</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -130,11 +131,12 @@
     <ClCompile Include="Apartment.cpp" />
     <ClCompile Include="CheckInCommand.cpp" />
     <ClCompile Include="Command.cpp" />
-    <ClCompile Include="CommandHandler.cpp" />
+    <ClCompile Include="CommandFactory.cpp" />
     <ClCompile Include="Date.cpp" />
     <ClCompile Include="DoubleRoom.cpp" />
     <ClCompile Include="Guest.cpp" />
     <ClCompile Include="Hotel.cpp" />
+    <ClCompile Include="HotelClass.cpp" />
     <ClCompile Include="MyString.cpp" />
     <ClCompile Include="Reservation.cpp" />
     <ClCompile Include="Room.cpp" />
@@ -145,11 +147,11 @@
     <ClInclude Include="Apartment.h" />
     <ClInclude Include="CheckInCommand.h" />
     <ClInclude Include="Command.h" />
-    <ClInclude Include="CommandHandler.h" />
+    <ClInclude Include="CommandFactory.h" />
     <ClInclude Include="Date.h" />
     <ClInclude Include="DoubleRoom.h" />
     <ClInclude Include="Guest.h" />
-    <ClInclude Include="Hotel.h" />
+    <ClInclude Include="HotelClass.h" />
     <ClInclude Include="MyString.h" />
     <ClInclude Include="Reservation.h" />
     <ClInclude Include="Room.h" />

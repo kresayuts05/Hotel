@@ -1,12 +1,11 @@
 #pragma once
 
-#include "MyString.h"
+#include "HotelClass.h"
 
 class Command
 {
 public:
-    virtual void execute() = 0;
-    virtual MyString getName() const = 0;
-    virtual ~Command() {}
+    virtual ~Command() = default;
+    virtual void execute(Hotel& hotel) = 0;
 };
 

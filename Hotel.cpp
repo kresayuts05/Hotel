@@ -1,7 +1,9 @@
 ﻿#include <iostream>
-#include "Hotel.h"
+#include "HotelClass.h"
 
 int main()
 {
     std::cout << "Hello World!\n";
 }
+
+
