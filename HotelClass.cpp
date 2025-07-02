@@ -118,14 +118,9 @@ void HotelClass::loadFromFile(const MyString& filename) {
 	ifs.ignore();
 
 	for (size_t i = 0; i < count; ++i) {
-		/*MyString type;
-		unsigned number;
-		ifs >> type >> number;
-		ifs.ignore();*/
 		std::string line;
 		std::getline(ifs, line);
 
-		// разделяме ръчно реда
 		std::istringstream ss(line);
 		std::string rawType;
 		unsigned number;
@@ -136,7 +131,6 @@ void HotelClass::loadFromFile(const MyString& filename) {
 			rawType.pop_back();
 		}
 
-		// създаваме MyString
 		MyString type(rawType.c_str());
 
 		Room* room = RoomFactory::create(type, number);

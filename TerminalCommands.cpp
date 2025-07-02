@@ -56,6 +56,6 @@ void HelpCommand::execute(const Vector<MyString>&, HotelClass&) {
 }
 
 void ExitCommand::execute(const Vector<MyString>&, HotelClass&) {
-    std::cout << "Goodbye.\n";
+    std::cout << "Goodbye." << std::endl;
     exit(0);
 }

@@ -10,22 +10,24 @@ Date::Date() : year(2000), month(1), day(1) {}
 
 Date::Date(unsigned y, unsigned m, unsigned d)
 	: year(y), month(m), day(d) {
+
+	/*std::cout << y << " " << m << " " << d << std::endl;*/
 	if (!isValid())
 		throw std::invalid_argument("Invalid data.");
 }
 
 Date Date::parse(const char* str) {
-	std::cout << " Опит за парсване на дата: [" << str << "]\n";
+	/*std::cout << " Parsing: [" << str << "]\n";*/
 
 	int year, month, day;
 	int result = std::sscanf(str, "%4d-%2d-%2d", &year, &month, &day);
-	std::cout << "sscanf върна: " << result << '\n';
+	//std::cout << "sscanf returned: " << result << std::endl;
 
 	if (result != 3) {
-		throw std::runtime_error("Невалиден формат на дата (очаква се YYYY-MM-DD)");
+		throw std::runtime_error("Invalid data (expected YYYY-MM-DD)");
 	}
 
-	return Date(year, month, day); 
+	return Date(year, month, day);
 }
 
 Date::Date(const MyString& iso) {
@@ -51,8 +53,14 @@ unsigned Date::daysInMonth(unsigned m, unsigned y) const {
 }
 
 bool Date::isValid() const {
-	if (month < 1 || month > 12) return false;
-	if (day < 1 || day > daysInMonth(month, year)) return false;
+	if (month < 1 || month > 12) {
+		return false;
+	}
+
+	if (day < 1 || day > daysInMonth(month, year)) {
+		return false;
+	}
+
 	return true;
 }
 
@@ -87,13 +95,28 @@ int Date::daysUntil(const Date& other) const {
 	return d2 - d1;
 }
 
-bool Date::operator==(const Date& o) const { return year == o.year && month == o.month && day == o.day; }
-bool Date::operator!=(const Date& o) const { return !(*this == o); }
+bool Date::operator==(const Date& o) const {
+	return year == o.year && month == o.month && day == o.day; 
+}
+
+bool Date::operator!=(const Date& o) const { 
+	return !(*this == o); 
+}
+
 bool Date::operator<(const Date& o) const {
 	if (year != o.year) return year < o.year;
 	if (month != o.month) return month < o.month;
 	return day < o.day;
 }
-bool Date::operator<=(const Date& o) const { return *this < o || *this == o; }
-bool Date::operator>(const Date& o) const { return !(*this <= o); }
-bool Date::operator>=(const Date& o) const { return !(*this < o); }
+
+bool Date::operator<=(const Date& o) const {
+	return *this < o || *this == o; 
+}
+
+bool Date::operator>(const Date& o) const {
+	return !(*this <= o); 
+}
+
+bool Date::operator>=(const Date& o) const {
+	return !(*this < o); 
+}

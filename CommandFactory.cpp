@@ -11,7 +11,7 @@ Command* CommandFactory::create(const MyString& name) {
     if (name == "open")         return new TerminalCommands::OpenCommand();
     else if (name == "close")        return new TerminalCommands::CloseCommand();
     else if (name == "save")         return new TerminalCommands::SaveCommand();
-    else if (name == "save" && name == "as") return new TerminalCommands::SaveAsCommand();
+    else if (name == "saveas") return new TerminalCommands::SaveAsCommand();
     else if (name == "help")         return new TerminalCommands::HelpCommand();
     else if (name == "exit")         return new TerminalCommands::ExitCommand();
 

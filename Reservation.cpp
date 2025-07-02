@@ -12,7 +12,7 @@ Reservation::Reservation(const Date& from, const Date& to, const MyString& note,
     : from(from), to(to), note(note), guests(guests) {
     if (to < from)
         throw std::invalid_argument("Error! End date before start date.");
-    if (guests == 0)
+    if (guests < 0)
         throw std::invalid_argument("Error! Guests should be atleast one.");
 }
 
@@ -72,7 +72,7 @@ Reservation Reservation::deserialize(std::istream& is) {
     std::getline(is, line); // редът с датите и гостите
 
     if (line.empty())
-        throw std::runtime_error("Липсва ред с дати при четене на резервация");
+        throw std::runtime_error("No line");
 
     std::istringstream ss(line);
     std::string fromStr, toStr;
@@ -81,7 +81,7 @@ Reservation Reservation::deserialize(std::istream& is) {
     ss >> fromStr >> toStr >> guests;
 
     if (fromStr.empty() || toStr.empty())
-        throw std::runtime_error("Липсва дата при прочитане на резервация");
+        throw std::runtime_error("No data");
 
     // Преобразуване: очакваме метод като Date::parse(const char*)
     Date from = Date::parse(fromStr.c_str());
