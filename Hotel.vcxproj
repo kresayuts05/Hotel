@@ -129,33 +129,35 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Apartment.cpp" />
-    <ClCompile Include="CheckInCommand.cpp" />
     <ClCompile Include="Command.cpp" />
     <ClCompile Include="CommandFactory.cpp" />
     <ClCompile Include="Date.cpp" />
     <ClCompile Include="DoubleRoom.cpp" />
-    <ClCompile Include="Guest.cpp" />
     <ClCompile Include="Hotel.cpp" />
     <ClCompile Include="HotelClass.cpp" />
+    <ClCompile Include="HotelCommands.cpp" />
     <ClCompile Include="MyString.cpp" />
     <ClCompile Include="Reservation.cpp" />
     <ClCompile Include="Room.cpp" />
+    <ClCompile Include="RoomFactory.cpp" />
     <ClCompile Include="SingleRoom.cpp" />
+    <ClCompile Include="TerminalCommands.cpp" />
     <ClCompile Include="TripleRoom.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Apartment.h" />
-    <ClInclude Include="CheckInCommand.h" />
     <ClInclude Include="Command.h" />
     <ClInclude Include="CommandFactory.h" />
     <ClInclude Include="Date.h" />
     <ClInclude Include="DoubleRoom.h" />
-    <ClInclude Include="Guest.h" />
     <ClInclude Include="HotelClass.h" />
+    <ClInclude Include="HotelCommands.h" />
     <ClInclude Include="MyString.h" />
     <ClInclude Include="Reservation.h" />
     <ClInclude Include="Room.h" />
+    <ClInclude Include="RoomFactory.h" />
     <ClInclude Include="SingleRoom.h" />
+    <ClInclude Include="TerminalCommands.h" />
     <ClInclude Include="TripleRoom.h" />
     <ClInclude Include="Vector.hpp" />
   </ItemGroup>

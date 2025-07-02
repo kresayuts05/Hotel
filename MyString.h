@@ -32,6 +32,8 @@ public:
 	char operator[](unsigned ind) const;
 
 	friend std::istream& operator>>(std::istream& is, MyString& lhs);
+
+	unsigned toUInt() const;
 };
 
 std::ostream& operator<<(std::ostream&, const MyString& lhs);

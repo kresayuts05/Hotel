@@ -5,7 +5,8 @@
 class TripleRoom : public Room {
 public:
     TripleRoom(unsigned number);
-    double getPrice() const override;
+
+    unsigned getBeds() const override;
     MyString getType() const override;
 };
 

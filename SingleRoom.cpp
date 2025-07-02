@@ -1,14 +1,13 @@
 #include "SingleRoom.h"
 
-const unsigned capacity = 2;
-const unsigned price = 50;
+const unsigned capacity = 1;
 
 SingleRoom::SingleRoom(unsigned number) : Room(number, capacity) {}
 
-double SingleRoom::getPrice() const {
-	return price;
+unsigned SingleRoom::getBeds() const { 
+	return capacity; 
 }
 
-MyString SingleRoom::getType() const {
-	return "Single";
+MyString SingleRoom::getType() const { 
+	return "single"; 
 }

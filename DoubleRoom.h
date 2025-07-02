@@ -5,7 +5,8 @@
 class DoubleRoom :public Room {
 public:
 	DoubleRoom(unsigned number);
-	double getPrice() const override;
+
+	unsigned getBeds() const override;
 	MyString getType() const override;
 };
 

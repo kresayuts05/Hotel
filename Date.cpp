@@ -1,5 +1,9 @@
+#define _CRT_SECURE_NO_WARNINGS
+
 #include "Date.h"
 #include <stdexcept>
+#include <cstdio>
+
 
 //взето от StackOverflow
 Date::Date() : year(2000), month(1), day(1) {}
@@ -7,12 +11,26 @@ Date::Date() : year(2000), month(1), day(1) {}
 Date::Date(unsigned y, unsigned m, unsigned d)
 	: year(y), month(m), day(d) {
 	if (!isValid())
-		throw std::invalid_argument("Невалидна дата.");
+		throw std::invalid_argument("Invalid data.");
+}
+
+Date Date::parse(const char* str) {
+	std::cout << " Опит за парсване на дата: [" << str << "]\n";
+
+	int year, month, day;
+	int result = std::sscanf(str, "%4d-%2d-%2d", &year, &month, &day);
+	std::cout << "sscanf върна: " << result << '\n';
+
+	if (result != 3) {
+		throw std::runtime_error("Невалиден формат на дата (очаква се YYYY-MM-DD)");
+	}
+
+	return Date(year, month, day); 
 }
 
 Date::Date(const MyString& iso) {
 	if (iso.length() != 10 || iso[4] != '-' || iso[7] != '-')
-		throw std::invalid_argument("Невалиден ISO формат за дата.");
+		throw std::invalid_argument("Invalid iso format.");
 
 	year = (iso[0] - '0') * 1000 + (iso[1] - '0') * 100 +
 		(iso[2] - '0') * 10 + (iso[3] - '0');
@@ -20,7 +38,7 @@ Date::Date(const MyString& iso) {
 	day = (iso[8] - '0') * 10 + (iso[9] - '0');
 
 	if (!isValid())
-		throw std::invalid_argument(std::string("Невалидна дата: ") + iso.c_str());
+		throw std::invalid_argument(std::string("Invalid data: ") + iso.c_str());
 }
 
 bool Date::isLeapYear(unsigned y) const {

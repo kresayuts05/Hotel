@@ -1,3 +1,4 @@
+#pragma once
 #include "MyString.h"
 #include <cstring>
 #include <cmath>
@@ -10,6 +11,18 @@ void MyString::copyFrom(const MyString& other)
 	cap = other.cap;
 	data = new char[cap + 1];
 	strcpy(data, other.data);
+}
+
+//Взета от StackOverflow
+unsigned MyString::toUInt() const {
+	unsigned result = 0;
+	for (size_t i = 0; i < length(); ++i) {
+		char c = operator[](i);
+		if (c < '0' || c > '9')
+			throw std::invalid_argument("MyString::toUInt: Невалиден символ");
+		result = result * 10 + (c - '0');
+	}
+	return result;
 }
 
 void MyString::free()

@@ -20,6 +20,8 @@ public:
     MyString toString() const;
     int daysUntil(const Date& other) const;
 
+   static Date parse(const char* str);
+
     bool operator==(const Date& other) const;
     bool operator!=(const Date& other) const;
     bool operator<(const Date& other) const;

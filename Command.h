@@ -5,7 +5,7 @@
 class Command
 {
 public:
-    virtual ~Command() = default;
-    virtual void execute(Hotel& hotel) = 0;
+    virtual ~Command() {};
+    virtual void execute(const Vector<MyString>& args, HotelClass& hotel) = 0;
 };
 

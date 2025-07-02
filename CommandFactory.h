@@ -5,6 +5,6 @@
 
 class CommandFactory {
 public:
-    static Command* create(const MyString& commandName, const Vector<MyString>& args);
+    static Command* create(const MyString& commandName);
 };
 

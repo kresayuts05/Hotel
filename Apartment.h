@@ -5,7 +5,8 @@
 class Apartment :public Room {
 public:
 	Apartment(unsigned number);
-	double getPrice() const override;
+
+	unsigned getBeds() const override;
 	MyString getType() const override;
 };
 
